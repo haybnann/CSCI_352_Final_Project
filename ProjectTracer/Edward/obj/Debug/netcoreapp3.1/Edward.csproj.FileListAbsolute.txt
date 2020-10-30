@@ -1,0 +1,13 @@
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\ProjectTracer\Edward\bin\Debug\netcoreapp3.1\Edward.exe
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\ProjectTracer\Edward\bin\Debug\netcoreapp3.1\Edward.deps.json
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\ProjectTracer\Edward\bin\Debug\netcoreapp3.1\Edward.runtimeconfig.json
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\ProjectTracer\Edward\bin\Debug\netcoreapp3.1\Edward.runtimeconfig.dev.json
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\ProjectTracer\Edward\bin\Debug\netcoreapp3.1\Edward.dll
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\ProjectTracer\Edward\bin\Debug\netcoreapp3.1\Edward.pdb
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\ProjectTracer\Edward\obj\Debug\netcoreapp3.1\Edward.csprojAssemblyReference.cache
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\ProjectTracer\Edward\obj\Debug\netcoreapp3.1\Edward.AssemblyInfoInputs.cache
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\ProjectTracer\Edward\obj\Debug\netcoreapp3.1\Edward.AssemblyInfo.cs
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\ProjectTracer\Edward\obj\Debug\netcoreapp3.1\Edward.csproj.CoreCompileInputs.cache
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\ProjectTracer\Edward\obj\Debug\netcoreapp3.1\Edward.dll
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\ProjectTracer\Edward\obj\Debug\netcoreapp3.1\Edward.pdb
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\ProjectTracer\Edward\obj\Debug\netcoreapp3.1\Edward.genruntimeconfig.cache
