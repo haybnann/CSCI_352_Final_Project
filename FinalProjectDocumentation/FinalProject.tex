@@ -189,12 +189,16 @@ The following requirements were generated based on the information needed to mak
 
 \subsubsection{Functional}
 \begin{itemize}
-\item Each user will have a profile that contains a list of the user's yearly tax history.
+\item The application will store the user's financial history data.
+\item The user will have a profile that will be able to be accessed on multiple visits
+\item The application will give the user their projecting retirement savings account worth based on a savings plan.
 \end{itemize}
 
 \subsubsection{Non-Functional}
 \begin{itemize}
-\item The user will have an account number, password, and other private information.
+\item The data will be stored securely within the app/database.
+\item The application will be responsive to all user input and be intuitive to use.
+\item The application will reliably provide the user with accurate data projections.
 \end{itemize}
 
 \subsection{Use Cases}
@@ -289,13 +293,15 @@ October 8  - UI Presentation\\
 October 29 - Tracer Code\\
 October 30 - Proposal Update\\
 November 3 - Tax Database Connection\\
-November 4 - Test Backend Functionality
+November 4 - Test Backend Functionality\\
+November 8 - Begin Integrating Backend \& Front-End\\
+November 15 - Writeup\\ 
 November 23 - Present Project
 
 \section{Project Structure}
 The UI is structured so that each page uses the same basic format with special buttons or features that have unique abilities.\\\\
 The Backend will likely contain a database with tax bracket data. It also will do all of the calculations to find what taxes a user will pay  and can project what the user's net retirement savings will be in the future. The user's profile contains a list of all the historical tax data for the user in a list. This allows the functions to easily iterate over the list to look up tax bracket data from the database to calculate the taxes and other retirement savings predictions.
-
+\newpage
 \subsection{UML Outline}
 
 \begin{figure}[h]
@@ -323,7 +329,11 @@ We will likely use the decorator factory pattern to design each page of the UI, 
 We have a general idea of where we want our project to head towards. 
 
 \subsection{Future Work}
-The next steps are to get an example UI working and have the backend tracer code connected to the database, so we can test if it is functionally accurate.
+The next steps are to get an example UI working and have the backend tracer code connected to the database, so we can test if it is functionally accurate.\\\\
+
+Fix Use Cases in documentation.
+
+
 
 
 \begin{IEEEbiography}{Michael Shell}
