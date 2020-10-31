@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.5)  1 OCT 2020 01:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.5)  30 OCT 2020 22:53
 entering extended mode
 **./FinalProject.tex
 (FinalProject.tex
@@ -342,31 +342,60 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.05249> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 162.
 LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 19
-8.
+2.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.03749> on input line 198.
+(Font)              <10.03749> on input line 192.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.0262> on input line 198.
+(Font)              <7.0262> on input line 192.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.01874> on input line 198.
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 209.
+(Font)              <5.01874> on input line 192.
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 203.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8.03> on input line 209.
+(Font)              <8.03> on input line 203.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.62097> on input line 209.
+(Font)              <5.62097> on input line 203.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <4.015> on input line 209.
+(Font)              <4.015> on input line 203.
 
-[1{C:/Users/A/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<BudgetingApp.png, id=75, 693.08937pt x 400.49625pt>
-File: BudgetingApp.png Graphic file (type png)
-<use BudgetingApp.png>
-Package pdftex.def Info: BudgetingApp.png  used on input line 282.
-(pdftex.def)             Requested size: 354.12144pt x 204.62927pt.
- [2]
-** WARNING: \IEEEbiography is locked out when in conference mode (line 311).
+[1{C:/Users/A/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+<uihome.png, id=89, 770.37813pt x 432.11438pt>
+File: uihome.png Graphic file (type png)
+<use uihome.png>
+Package pdftex.def Info: uihome.png  used on input line 265.
+(pdftex.def)             Requested size: 354.12144pt x 198.62996pt.
+<uihomecreen.png, id=91, 773.89125pt x 429.605pt>
+File: uihomecreen.png Graphic file (type png)
+<use uihomecreen.png>
+Package pdftex.def Info: uihomecreen.png  used on input line 271.
+(pdftex.def)             Requested size: 354.12144pt x 196.57841pt.
+<financialplan.png, id=92, 773.89125pt x 434.62375pt>
+File: financialplan.png Graphic file (type png)
+<use financialplan.png>
+Package pdftex.def Info: financialplan.png  used on input line 277.
+(pdftex.def)             Requested size: 354.12144pt x 198.87488pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./uihome.png> <./uihomecreen.png>]
+<backend_uml.png, id=101, 936.49875pt x 457.71pt>
+File: backend_uml.png Graphic file (type png)
+<use backend_uml.png>
+Package pdftex.def Info: backend_uml.png  used on input line 293.
+(pdftex.def)             Requested size: 354.12144pt x 173.07954pt.
+<ui_uml.png, id=102, 651.43375pt x 380.42125pt>
+File: ui_uml.png Graphic file (type png)
+<use ui_uml.png>
+Package pdftex.def Info: ui_uml.png  used on input line 299.
+(pdftex.def)             Requested size: 354.12144pt x 206.80594pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4 <./financialplan.png> <./backend_uml.png>]
+** WARNING: \IEEEbiography is locked out when in conference mode (line 318).
 ** WARNING: \IEEEbiographynophoto is locked out when in conference mode (line 3
-16).
+23).
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -378,32 +407,32 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 333.
-[3 <./BudgetingApp.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 333.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 340.
+[5 <./ui_uml.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 340.
  (FinalProject.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 333.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 333.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 340.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 340.
 Package rerunfilecheck Info: File `FinalProject.out' has not changed.
 (rerunfilecheck)             Checksum: CA87C4D625CEDD03C9A48B2297B23296;945.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 333.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 340.
  ) 
 Here is how much of TeX's memory you used:
- 6300 strings out of 492973
- 100403 string characters out of 3128465
- 193141 words of memory out of 3000000
- 10111 multiletter control sequences out of 15000+200000
+ 6330 strings out of 492973
+ 100835 string characters out of 3128465
+ 192284 words of memory out of 3000000
+ 10131 multiletter control sequences out of 15000+200000
  38658 words of font info for 73 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,7n,28p,521b,422s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,7n,28p,480b,441s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/A/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:
 /Users/A/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7
 .pfb><C:/Users/A/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a
 .pfb><C:/Users/A/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a
 .pfb>
-Output written on FinalProject.pdf (3 pages, 276232 bytes).
+Output written on FinalProject.pdf (5 pages, 702568 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 140 PDF objects out of 1000 (max. 8388607)
+ 37 named destinations out of 1000 (max. 500000)
+ 154 words of extra memory for PDF output out of 10000 (max. 10000000)
 

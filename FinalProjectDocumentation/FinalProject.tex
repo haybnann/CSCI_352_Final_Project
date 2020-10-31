@@ -140,7 +140,7 @@
 
 \begin{document}
 
-\title{Final Project Documentation \\ for UTM CSCI 352}
+\title{Project Edward: Final Project Documentation \\ for UTM CSCI 352}
 %
 %
 
@@ -151,7 +151,7 @@
 
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-This Project will be a financial advisor type app, currently it has a temporary name: Edward after Edward Jones. You can give it your salary, location, and tax information and it will provide you with ways to reduce taxable income and responsibly invest some of your savings. The target of this application is the general consumer who is interested in learning about personal finance and ways that they can maximize their take-home income. So far we have outlined some of the major goals of our app.
+This project is an application for those who are planning for their retirement at any point in their career. The goal of the prject is to allow the user's to set retirement saving's goals and track their progress along the way. It can also be used to forcast what your savings will be if you adhere to a certain investment strategy. 
 \end{abstract}
 
 }
@@ -169,9 +169,7 @@ This Project will be a financial advisor type app, currently it has a temporary 
 
 
 \section{Introduction}
-This project is an application anyone can use to help then plan their budget, calculate taxes, and get advice on how to responsibly invest their money. This application targets everyday consumers and anyone with an income stream. 
-
-The user will be able to receive financial advice and budgeting tips that are dependent on the user's salary, spending habits, and various other factors. The information given to the user is intended to help the user become financially responsible and generally more aware of what they are using their money for.
+This project will allow a user to enter in financial information such as income, filing status, year, as well as whether they are contributing to a pretax retirement savings account to accurately calculated taxes and tax deductions for each tax year. This will allow the app to accurately reflect its user's financial history as well as help them to plan for their retirement while early in their career, which is most beneficial due to compounding interest.
 
 \subsection{Background}
 This application may include large amounts of financial jargon such as marginal tax rates, adjusted gross income, etc. We aim to make definitions and explanations of these terms available in app, so we can make this information more accessible. 
@@ -182,20 +180,16 @@ This application should impact the financial literacy of its users, since financ
 \subsection{Challenges}
 We expect some headaches when we start to implement the tax laws and regulations since it will be time consuming to get everything correct and easily changeable.
 
-Record keeping of money transfers will likely be an issue and well as potential runtime lag, since it will likely be doing lots of math.
-
-The user interface and general design will be a time consuming task that will take many iterations to come to a consensus on.
-
+Current challenges are how we should document all of the tax brackets and we are debating on using a database with each table storing one year's tax bracket data.
 
 \section{Scope}
-At the completion of this project the end user will be able to enter information that will affect their tax status and the app will give them financial advice. Once the app meets the needs for a majority of the US general population it could be considered complete.
-
+At the completion of this project the end user will be able to enter information that will affect their tax status such as salary, filing status, and location and then the app will project how this will impact their retirement savings accounts and provide the user a resource to show how much they need to save and invest per year to meet their goals.
 \subsection{Requirements}
 The following requirements were generated based on the information needed to make financial advice.
 
 \subsubsection{Functional}
 \begin{itemize}
-\item Each user will have a profile that contains information about the user's net worth, salary, and user transactions.
+\item Each user will have a profile that contains a list of the user's yearly tax history.
 \end{itemize}
 
 \subsubsection{Non-Functional}
@@ -264,10 +258,28 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 	\item The user is directed to the Home page of the application.
 	\item[Termination Outcome:] The user can now view the home screen and see their information.
 \end{enumerate}
-
+\newpage
 \subsection{Interface Mockups}
-We plan to include a wireframe diagram in future editions of this document showing the general layout of the application.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{uihome}
+	\caption{Login Page}
+	\label{fig:uihome}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{uihomecreen}
+	\caption{Home Page}
+	\label{fig:uihomecreen}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{financialplan}
+	\caption{Financial Plan Page}
+	\label{fig:financialplan}
+\end{figure}
 
+\newpage
 \section{Project Timeline}
 We will add project timeline in the next update.
 
@@ -275,14 +287,21 @@ We will add project timeline in the next update.
 We will add the project structure in the next update.
 
 \subsection{UML Outline}
-We will generate a UML Outline in next weeks deliverable.
-%Below is the UML Outline, but was unable to get it to fit correctly into the PDF. Will change later.
-\begin{figure}
+
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{BudgetingApp}
-	\caption{}
-	\label{fig:budgetingapp}
+	\includegraphics[width=0.7\linewidth]{backend_uml}
+	\caption{Backend UML}
+	\label{fig:backenduml}
 \end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{ui_uml}
+	\caption{UI UML}
+	\label{fig:uiuml}
+\end{figure}
+\newpage
+
 
 
 \subsection{Design Patterns Used}
@@ -294,18 +313,6 @@ We have a general idea of where we want our project to head towards. We will be 
 
 \subsection{Future Work}
 The next steps are to create a UML diagram of the project and get a minimum viable product working that allows the user to submit a salary amount and returns their predicted after-tax income.
-
-
-
-
-%\begin{thebibliography}{1}
-
-%\bibitem{IEEEhowto:kopka}
-%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
-%\end{thebibliography}
-
 
 
 \begin{IEEEbiography}{Michael Shell}
