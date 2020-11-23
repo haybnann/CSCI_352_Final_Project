@@ -1,0 +1,22 @@
+﻿<Window x:Class="Ed.LoginPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ed"
+        mc:Ignorable="d"
+        Title="Edward Login" Height="450" Width="800" Background="#8CBB80">
+    <Grid>
+
+
+        <Border CornerRadius="10"  BorderBrush="#FFF4F4F5" BorderThickness="20" HorizontalAlignment="Left" Height="311" Margin="193,73,0,0" VerticalAlignment="Top" Width="407"/>
+        <Rectangle  Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="280" Margin="206,88,0,0" VerticalAlignment="Top" Width="378"/>
+        <Button x:Name ="login_button"  Content="Log In" HorizontalAlignment="Left" Height="33" Margin="358,314,0,0" VerticalAlignment="Top" Width="98" Click="login_button_Click"/>
+        <TextBox Name ="Username"  HorizontalAlignment="Left" Height="30" Margin="316,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" RenderTransformOrigin="0.503,0.535"/>
+        <PasswordBox Name ="Password"  HorizontalAlignment="Left" Height="30" Margin="316,248,0,0" VerticalAlignment="Top" Width="190"/>
+        <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="219,202,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Height="30" Width="92"/>
+        <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="219,248,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Height="30" Width="74"/>
+        <TextBlock  FontSize="30" HorizontalAlignment="Left" Margin="358,88,0,0" TextWrapping="Wrap" Text="Edward" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="275,144,0,0" TextWrapping="Wrap" Text="CAUTION: Passwords are stored in plaintext!" VerticalAlignment="Top" Width="238"/>
+    </Grid>
+</Window>

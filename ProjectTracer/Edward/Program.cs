@@ -17,12 +17,17 @@ namespace Edward
         static void Main(string[] args)
         {
 
+            //OleDbConnection cn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\UserDatabase.accdb");
+
             //test functions in main
             UserProfile myProfile = new UserProfile();
             myProfile.AddIncomeHistory(100000, "single", 10000, 6000, 2020);
+            
             myProfile.AddIncomeHistory(112345, "single", 10425, 6435, 2019);
             myProfile.AddIncomeHistory(152352, "single", 10524, 6554, 2018);
             myProfile.printTaxHistory();
+
+
 
         }
     }
