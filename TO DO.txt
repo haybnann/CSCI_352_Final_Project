@@ -1,16 +1,3 @@
-ProjectTracer:(Ranked in order of importance)
-	1. Add tax bracket data using a database or better alternative dating back 
-	   atleast 10 years.
-	2. Update Functions to work with new database info, may need to add 
-	   fucntion to access the data.
-	3. Test that all functions are working as intended
-
-FinalProjectDocumentation:
-	1. Ensure Proposal Remains up to date
-	
-UML:
-	1. Finalize Design
-
-UI:	
-	1. Develop prototype to display data and get general format of the UI Working
-		- actual data can be a constant or random number for now
+Add Insert Functions
+Graph Data & Projections
+Finish Documentation

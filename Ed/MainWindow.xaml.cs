@@ -213,7 +213,7 @@ namespace Ed
         //Add a record to the user's tax profile in a new window -- pass info back to main
         private void Add_Record_Click(object sender, RoutedEventArgs e)
         {
-            AddRecordWindow w = new AddRecordWindow();
+            AddRecordWindow w = new AddRecordWindow(uid.Content.ToString());
             w.Show();
         }
 
