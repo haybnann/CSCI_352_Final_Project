@@ -4,41 +4,65 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Ed"
+        xmlns:local="clr-namespace:Ed" xmlns:chartingToolkit="clr-namespace:LiveCharts.Wpf.Charts.Base;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
-        Title="Edward" Height="450" Width="800">
+        Title="Edward" Height="450" Width="800" Background="#8CBB80" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="71*"/>
             <ColumnDefinition Width="583*"/>
             <ColumnDefinition Width="139*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle Fill="#F0F0F0F0" HorizontalAlignment="Left" Height="350" Margin="539.667,39,0,0" VerticalAlignment="Top" Width="150" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Border BorderBrush="#F0F0F0F0" CornerRadius="15" BorderThickness="30" HorizontalAlignment="Left" Margin="529.667,28,0,18.667" Width="179" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Border BorderBrush="#F0F0F0F0" CornerRadius="15" BorderThickness="30" HorizontalAlignment="Left" Margin="31,33,0,23.667" Width="544" Grid.ColumnSpan="2"/>
-        <Rectangle Fill="#F0F0F0F0" HorizontalAlignment="Left"  Margin="52,48,0,0" VerticalAlignment="Top" Width="500" Grid.ColumnSpan="2" Height="329" />
+        <Rectangle Fill="#FFFFFF" HorizontalAlignment="Left" Height="350" Margin="539.667,39,0,0" VerticalAlignment="Top" Width="150" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Border BorderBrush="#FFFFFF" CornerRadius="15" BorderThickness="30" HorizontalAlignment="Left" Margin="529.667,28,0,18.667" Width="179" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Border BorderBrush="#FFFFFF" CornerRadius="15" BorderThickness="30" HorizontalAlignment="Left" Margin="31,33,0,23.667" Width="544" Grid.ColumnSpan="2"/>
+        <Rectangle Fill="#FFFFFF" HorizontalAlignment="Left"  Margin="52,48,0,0" VerticalAlignment="Top" Width="500" Grid.ColumnSpan="2" Height="329" />
         <Button Content="Add Records" HorizontalAlignment="Left" Height="36" Margin="555.667,108,0,0" VerticalAlignment="Top" Width="125" Grid.Column="1" Click="Add_Record_Click" Grid.ColumnSpan="2"/>
         <Button Content="View Records" HorizontalAlignment="Left" Height="36" Margin="555.667,160,0,0" VerticalAlignment="Top" Width="125" Grid.Column="1" Grid.ColumnSpan="2" Click="View_Records_Click"/>
-        <Button Content="et cetera" HorizontalAlignment="Left" Height="36" Margin="555.667,211,0,0" VerticalAlignment="Top" Width="125" Grid.Column="1" Grid.ColumnSpan="2"/>
         <Label Name ="userName" HorizontalContentAlignment="Center" Content="Label" HorizontalAlignment="Left" Margin="532.97,2,0,0" VerticalAlignment="Top" Width="179" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <TextBlock Name="data" Grid.Column="2" HorizontalAlignment="Left" Margin="18.637,283,-170.303,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="127" Width="291"/>
-        <lvc:CartesianChart Background="#F0f0f0" Margin="9.667,77,150,43.667" Grid.Column="1">
-            <lvc:CartesianChart.Series>
-                <lvc:LineSeries Values="{Binding Values1}" StrokeThickness="4" StrokeDashArray="2" 
-                       Stroke="#6BBA45" Fill="Transparent" LineSmoothness="0" PointGeometry="{x:Null}" />
-                <lvc:LineSeries Values="{Binding Values2}" StrokeThickness="2" 
-                       Stroke="#1C8FC5" Fill="Transparent" LineSmoothness="1" 
-                       PointGeometrySize="15"/>
+        <lvc:CartesianChart Name ="mainChart"  Background="#FFFFFF" Margin="52,64,102.363,31.667" Grid.ColumnSpan="2">
+
+            <lvc:CartesianChart.Series >
+                <lvc:LineSeries Title="PostTax Investments" Values="{Binding Values1}" StrokeThickness="3"
+                       Stroke="#FF7E46" Fill="Transparent" LineSmoothness="0.5" PointGeometrySize="5" />
+                <lvc:LineSeries Title="Pretax Investments" Values="{Binding Values2}"  StrokeThickness="3" 
+                       Stroke="#B10000" Fill="Transparent" LineSmoothness="0.5" PointGeometrySize="5"/>
+                <lvc:LineSeries Title="Income" Values="{Binding Values3}"  StrokeThickness="3" 
+                       Stroke="#0311D2" Fill="Transparent" LineSmoothness="0.5" PointGeometrySize="5"/>
+                <lvc:LineSeries Title="Total Invested" Values="{Binding Values4}"  StrokeThickness="3" 
+                       Stroke="#1B9217" Fill="Transparent" LineSmoothness="0.5" PointGeometrySize="5"/>
             </lvc:CartesianChart.Series>
-            <lvc:CartesianChart.AxisY>
-                <lvc:Axis Title="Dollars" Foreground="black" ></lvc:Axis>
+
+
+            <lvc:CartesianChart.AxisY >
+                <lvc:Axis Foreground="DarkGray" Title="Dollars" >
+                    <lvc:Axis.Separator>
+                        <lvc:Separator 
+                         Stroke="DarkGray" StrokeThickness="1">
+                        </lvc:Separator>
+                    </lvc:Axis.Separator>
+                </lvc:Axis>
             </lvc:CartesianChart.AxisY>
+
             <lvc:CartesianChart.AxisX>
-                <lvc:Axis Title="Year" Foreground=" black"></lvc:Axis>
+                <lvc:Axis Foreground="DarkGray" Title="Date" >
+                    <lvc:Axis.Separator>
+                        <lvc:Separator 
+                         Stroke="DarkGray" StrokeThickness="1">
+                        </lvc:Separator>
+                    </lvc:Axis.Separator>
+                </lvc:Axis>
             </lvc:CartesianChart.AxisX>
+
+
+
+
         </lvc:CartesianChart >
+        
+
         <Label Content="Menu" HorizontalContentAlignment="Center" FontSize="20" Grid.Column="1" HorizontalAlignment="Left" Margin="555.667,48,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
-        <Label Name="uid" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="491.667,389,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label Content="Retirement Investments" FontSize="20"  Foreground="DarkGray" Grid.Column="1" HorizontalAlignment="Left" Margin="112.97,39,0,0" VerticalAlignment="Top" Width="241" Height="38"/>
+        <Button Grid.ColumnSpan="2" Content="Delete Profile" Grid.Column="1" HorizontalAlignment="Left" Margin="555.97,215,0,0" VerticalAlignment="Top" Width="125" Height="36"/>
 
     </Grid>
 

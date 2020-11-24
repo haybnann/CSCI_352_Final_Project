@@ -22,7 +22,7 @@ namespace Ed
     
     public partial class LoginPage : Window
     {
-        Boolean DEBUG = true;
+        Boolean DEBUG = false;
         public LoginPage()
         {
             InitializeComponent();
@@ -32,10 +32,9 @@ namespace Ed
         {
             if(DEBUG == true)
             {
-                MainWindow mainWindow = new MainWindow();
+                MainWindow mainWindow = new MainWindow("2");
                 mainWindow.Show();
                 mainWindow.userName.Content = "user2";
-                mainWindow.uid.Content = "2";
                 this.Close();
             }
             else {
@@ -55,13 +54,7 @@ namespace Ed
                     int count = Convert.ToInt32(db_cmd.ExecuteScalar());
                     if(count == 1)
                     {
-                        MainWindow mainWindow = new MainWindow();
-                        mainWindow.Show();
-                        //pass username to be displayed in mainwindow
-                        mainWindow.userName.Content = Username.Text;
 
-                        
-                        
                         //EXTRA query because ---FIX this mess
                         query = "SELECT * FROM LoginData WHERE USERNAME=@Username";
                         OleDbConnection c = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source =  |DataDirectory|UserDatabase.accdb");
@@ -73,7 +66,10 @@ namespace Ed
                         if (reader.Read())
                         {
                             //pull out the uid
-                            mainWindow.uid.Content = reader[1].ToString();
+                            MainWindow mainWindow = new MainWindow(reader[0].ToString());
+                            mainWindow.Show();
+                            //pass username to be displayed in mainwindow
+                            mainWindow.userName.Content = Username.Text;
                         }   
 
                         //close all the things
@@ -97,6 +93,12 @@ namespace Ed
                     db_connect.Close();
                 }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SignUpWindow suw = new SignUpWindow();
+            suw.Show();
         }
     }
 }

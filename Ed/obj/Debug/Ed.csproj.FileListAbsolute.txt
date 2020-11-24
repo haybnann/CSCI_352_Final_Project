@@ -28,3 +28,5 @@ C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Proj
 C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\Ed\obj\Debug\AddRecordWindow.baml
 C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\Ed\obj\Debug\ViewRecordsWindow.g.cs
 C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\Ed\obj\Debug\ViewRecordsWindow.baml
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\Ed\obj\Debug\SignUpWindow.g.cs
+C:\Users\A\Documents\Classes\Fall 2020\CSCI_352_Soft_ENGR\git\CSCI352_Final_Project\CSCI_352_Final_Project\Ed\obj\Debug\SignUpWindow.baml

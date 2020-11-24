@@ -96,13 +96,6 @@ namespace Ed
             //open database and add entry of comboboxes
 
             String connect = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source =  |DataDirectory|UserDatabase.accdb";
-            /*String query = "INSERT INTO UserData (ID_NUM,SALARY,FILING_STATUS,PRETAX,POSTTAX,YEAR) VALUES(" + userID + ","
-                                                            + cbincome.SelectedItem + ","
-                                                            + cbfiling.SelectedItem.ToString()+ ","
-                                                            + cbpretax.SelectedItem.ToString() + ","
-                                                            + cbposttax.SelectedItem.ToString() + ","
-                                                            + cbyear.SelectedItem.ToString()
-                                                            +")";//SQL injection bug*/
 
             //vulnerable to sql injection
             String query = "INSERT INTO [UserData] ([ID_NUM],[SALARY],[FILING_STATUS],[PRETAX],[POSTTAX],[YEAR]) VALUES ('" 

@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LiveCharts;
 using LiveCharts.Wpf;
+using Separator = LiveCharts.Wpf.Separator;
 
 /*TO DO: 
  *  - Add queries for :
@@ -33,19 +34,22 @@ namespace Ed
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+
+        UserProfile user;
+        String userid;
+        public MainWindow(String id)
         {
             InitializeComponent();
+            userid = id;
 
 
-            //add profile
-            UserProfile user = new UserProfile();
+            
+            user = new UserProfile();
             String db = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =  |DataDirectory|UserDatabase.accdb";
 
-            //change query to match the user id num for who logs in
-            
-            Load_Profile_Query(db, uid.Content.ToString(),user);
-            String u_ID = uid.Content.ToString();
+            //load the users data - all of their records
+            Load_Profile_Query(db, userid,user);
+            //String u_ID = uid.Content.ToString();
 
             //display the data you know now
             //data.Text = user.userTaxHistory[0].getSalary().ToString();
@@ -54,21 +58,30 @@ namespace Ed
             //data.Text = user.incomeTaxList[0].taxedAmount.ToString();
 
             String query = "SELECT * FROM StandardDeduction2020 WHERE FILING_STATUS = 'Single'";
-            Update_Deductions_Query(db, query, user);
+            //Update_Deductions_Query(db, query, user);
             //data.Text = user.taxdeduct.taxDeduction.ToString();
             //data.Text = user.getAdjustedGrossIncome(user.userTaxHistory[0]).ToString();
 
-            //load financial data
-            Values1 = new ChartValues<double> { 3, 4, 6, 3, 2, 6 };
-            Values2 = new ChartValues<double> { 5, 3, 5, 7, 3, 9 };
+
+
+
+            //load financial data here:
+            Values1 = new ChartValues<double>(user.PostTaxList());
+            Values2 = new ChartValues<double>(user.PreTaxList());
+            Values3 = new ChartValues<double>(user.SalaryList());
+            Values4 = new ChartValues<double>(user.InvestmentsList());
+
             DataContext = this;
-            //interact with user now:
+
+            InvalidateVisual();
         }
 
 
 
         public ChartValues<double> Values1 { get; set; }
         public ChartValues<double> Values2 { get; set; }
+        public ChartValues<double> Values3 { get; set; }
+        public ChartValues<double> Values4 { get; set; }
 
         //change this function into constructor for userprofile
         //function loads all database info on a user into program
@@ -213,19 +226,19 @@ namespace Ed
         //Add a record to the user's tax profile in a new window -- pass info back to main
         private void Add_Record_Click(object sender, RoutedEventArgs e)
         {
-            AddRecordWindow w = new AddRecordWindow(uid.Content.ToString());
+            AddRecordWindow w = new AddRecordWindow(userid);
             w.Show();
         }
-
 
         //view all of the users tex records
         private void View_Records_Click(object sender, RoutedEventArgs e)
         {
-            ViewRecordsWindow vrw = new ViewRecordsWindow(uid.Content.ToString());
+            ViewRecordsWindow vrw = new ViewRecordsWindow(userid);
             //vrw.u_ID.Content = ;
             vrw.Show();
             //
         }
+
     }
     class UserProfile
     {
@@ -244,7 +257,55 @@ namespace Ed
             taxdeduct = new Deductions();
         }
 
+        public List<Double> PreTaxList()
+        {
+            List<Double> list = new List<Double>();
+            foreach (YearlyTaxProfile ytp in this.userTaxHistory)
+            {
+                list.Add(ytp.getPreTaxContributions());
 
+            }
+
+            return list;
+        }
+        public List<Double> PostTaxList()
+        {
+            List<Double> list = new List<Double>();
+            foreach (YearlyTaxProfile ytp in this.userTaxHistory)
+            {
+                list.Add(ytp.getPostTaxContributions());
+
+            }
+
+            return list;
+        }
+        public List<Double> InvestmentsList()
+        {
+            List<Double> list = new List<Double>();
+            foreach (YearlyTaxProfile ytp in this.userTaxHistory)
+            {
+                Double prev = 0;
+                if (list.Count() > 0)
+                {
+                    prev = list[list.Count - 1];
+                }
+                list.Add(prev + ytp.getPostTaxContributions() + ytp.getPreTaxContributions());
+
+            }
+
+            return list;
+        }
+        public List<Double> SalaryList()
+        {
+            List<Double> list = new List<Double>();
+            foreach (YearlyTaxProfile ytp in this.userTaxHistory)
+            {
+                list.Add(ytp.getSalary());
+
+            }
+
+            return list;
+        }
 
         //add a year of financial info to the user's list
         public void AddIncomeHistory(double annualSalary, string filingStatus, double pretax, double posttax, int year)
@@ -410,11 +471,11 @@ namespace Ed
         }
         public double getPostTaxContributions()
         {
-            return posttaxContribution;
+            return this.posttaxContribution;
         }
         public double getPreTaxContributions()
         {
-            return pretaxContribution;
+            return this.pretaxContribution;
         }
         public double getYear()
         {
