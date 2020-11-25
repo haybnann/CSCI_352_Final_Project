@@ -46,7 +46,7 @@ namespace Ed
             List<string> fdata = new List<string>();
            
             fdata.Add("Single");
-            fdata.Add("MarriedFilingJointly");
+            fdata.Add("Married Filing Jointly");
             fdata.Add("Married Filing Separate");
             fdata.Add("Head Of Household");
             cbfiling.ItemsSource = fdata;

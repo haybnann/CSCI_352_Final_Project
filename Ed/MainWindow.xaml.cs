@@ -19,11 +19,6 @@ using LiveCharts.Wpf;
 using Separator = LiveCharts.Wpf.Separator;
 
 /*TO DO: 
- *  - Add queries for :
- *          + Adding queries to add data to database
- *  - Add Signup page
- *  - Graph data 
- *          + list of retirement growth
  */
 
 
@@ -40,40 +35,34 @@ namespace Ed
         public MainWindow(String id)
         {
             InitializeComponent();
+
             userid = id;
 
-
-            
             user = new UserProfile();
             String db = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =  |DataDirectory|UserDatabase.accdb";
 
             //load the users data - all of their records
             Load_Profile_Query(db, userid,user);
-            //String u_ID = uid.Content.ToString();
+                
+            //get current income tax rates --- Change this to search for different years and keep a list of rates for each
+            Update_IncomeTax_Query(db,user,user.userTaxHistory[0].getFilingStatus());
 
-            //display the data you know now
-            //data.Text = user.userTaxHistory[0].getSalary().ToString();
-
-            //Update_IncomeTax_Query(db,user,user.userTaxHistory[0].getFilingStatus());
-            //data.Text = user.incomeTaxList[0].taxedAmount.ToString();
-
+            //get standard tax deductions
             String query = "SELECT * FROM StandardDeduction2020 WHERE FILING_STATUS = 'Single'";
-            //Update_Deductions_Query(db, query, user);
-            //data.Text = user.taxdeduct.taxDeduction.ToString();
-            //data.Text = user.getAdjustedGrossIncome(user.userTaxHistory[0]).ToString();
-
-
-
+            Update_Deductions_Query(db, query, user);
 
             //load financial data here:
             Values1 = new ChartValues<double>(user.PostTaxList());
             Values2 = new ChartValues<double>(user.PreTaxList());
             Values3 = new ChartValues<double>(user.SalaryList());
-            Values4 = new ChartValues<double>(user.InvestmentsList());
-
+           
+            List<Double> invest = new List<double>();
+            invest.AddRange(user.AssetValuePrediction(5, 0.07));
+            Values4 = new ChartValues<double>(invest);
+            Values5 = new ChartValues<double>(user.TakeHomePayList());
+            
             DataContext = this;
-
-            InvalidateVisual();
+  
         }
 
 
@@ -82,8 +71,9 @@ namespace Ed
         public ChartValues<double> Values2 { get; set; }
         public ChartValues<double> Values3 { get; set; }
         public ChartValues<double> Values4 { get; set; }
+        public ChartValues<double> Values5 { get; set; }
 
-        //change this function into constructor for userprofile
+
         //function loads all database info on a user into program
         void Load_Profile_Query(String connect, String u_id, UserProfile user)
         {
@@ -137,6 +127,8 @@ namespace Ed
                 //add tax profile to list in user profile
                 user.userTaxHistory.Add(ytp);
             }
+            //sort the list by year
+            user.userTaxHistory.Sort((x, y) => x.getYear().CompareTo(y.getYear()));
             c.Close();
         }
 
@@ -223,7 +215,7 @@ namespace Ed
             c.Close();
         }
 
-        //Add a record to the user's tax profile in a new window -- pass info back to main
+        //Add a record to the user's tax profile in a new window
         private void Add_Record_Click(object sender, RoutedEventArgs e)
         {
             AddRecordWindow w = new AddRecordWindow(userid);
@@ -239,10 +231,18 @@ namespace Ed
             //
         }
 
+        //logout
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+
     }
     class UserProfile
     {
-        public List<YearlyTaxProfile> userTaxHistory;//make a list to hold all of the users previous financial info
+        //make a list to hold all of the users previous financial info
+        public List<YearlyTaxProfile> userTaxHistory;
 
         //list of tax brackets for whatever year you're currently using
         public List<FederalIncomeTaxBracket> incomeTaxList;
@@ -281,6 +281,7 @@ namespace Ed
         }
         public List<Double> InvestmentsList()
         {
+            double interest = 0.07;//7%interest
             List<Double> list = new List<Double>();
             foreach (YearlyTaxProfile ytp in this.userTaxHistory)
             {
@@ -289,7 +290,7 @@ namespace Ed
                 {
                     prev = list[list.Count - 1];
                 }
-                list.Add(prev + ytp.getPostTaxContributions() + ytp.getPreTaxContributions());
+                list.Add(prev + prev*interest + ytp.getPostTaxContributions() + ytp.getPreTaxContributions());
 
             }
 
@@ -306,31 +307,62 @@ namespace Ed
 
             return list;
         }
+        public List<Double> TakeHomePayList()
+        {
+            List<Double> list = new List<Double>();
+            foreach (YearlyTaxProfile ytp in this.userTaxHistory)
+            {
+                list.Add(this.getTakeHomePay(ytp));
 
-        //add a year of financial info to the user's list
-        public void AddIncomeHistory(double annualSalary, string filingStatus, double pretax, double posttax, int year)
-        {
-            //add to list --------TO DO: Organize it by year
-            /*userTaxHistory.Add(
-                new YearlyTaxProfile(annualSalary, filingStatus, pretax, posttax, year)
-            );*/
+            }
+
+            return list;
         }
+
         //used to graph data projections of future worth of assets
-        public double AssetValuePrediction(int yearsOfInterest, double effectiveInterest)
+        public List<Double> AssetValuePrediction(int yearsOfInterest, double effectiveInterest)
         {
+            //Interest should be taken at year end instead of how this is 
+
+            //get what you already invested per year
+            List<Double> list  = this.InvestmentsList();
+            //get interest on old data
+            List<Double> newList = new List<double>();
+           
+            //add interest to old data
+            Double prev = list[0];
+            foreach(Double item in list)
+            {
+                prev = prev * effectiveInterest + item;
+                newList.Add(prev);
+            }
+            //add interest to last total invested value       
+            Double last = newList[newList.Count()-1];
+            list.Clear();
+            for(int i = 0; i < yearsOfInterest; i++)
+            {
+                //new = prev + interest on prev
+                //new = prev + prev * interest 
+                last = (last + last * effectiveInterest);
+                newList.Add(last);
+            }
+
             //return projected value to graph
-            return 0;//delete later
+            return newList;
         }
 
 
         public double getTakeHomePay(YearlyTaxProfile ytp)
         {
+            //TO DO: Add federal income taxes
             //return annualSalary - getFICA_Taxes()- getFederalIncomeTax()-getLocalIncomeTax()-pretaxcontributions
-            return ytp.getSalary() - this.getFICA_Taxes(ytp) - this.getFederalIncomeTax(ytp) - ytp.getPreTaxContributions();
+            return ytp.getSalary() - this.getFICA_Taxes(ytp)  - ytp.getPreTaxContributions();
         }
-        public double getFICA_Taxes(YearlyTaxProfile ytp)//FIX FICA TAXES
+        public double getFICA_Taxes(YearlyTaxProfile ytp)
         {
+            //TO DO: FICA taxes aren't fixed - use a database to store different years data
             double taxrate = 0.07;//FIX HARDCODED
+            //tax on everything except exempt contributions
             return taxrate * (ytp.getSalary() - ytp.getPreTaxContributions());
         }
         public double getTaxDeductions()
@@ -343,7 +375,7 @@ namespace Ed
             return ytp.getSalary() - ytp.getPreTaxContributions() - this.getTaxDeductions();
         }
 
-        //calculate taxes for user in a given year
+        //calculate taxes for user in a given year --------------------------------- FIX
         public double getFederalIncomeTax(YearlyTaxProfile ytp)
         {
             //based on taxable income (agi)
