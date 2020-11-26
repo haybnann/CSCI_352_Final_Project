@@ -216,6 +216,8 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \hline
 4 & Add Record & User & High & 1\\
 \hline
+5 & Logout & User & High & 1\\
+\hline
 
 \end{tabular}
 \caption{Use case table}
@@ -257,7 +259,7 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 	\item[Use Case Number:] 3
 	\item[Use Case Name:] View Records
 	\item[Description:] The user will be able to view all of their records held in the application in tabulated form.
-	\item[Precondition:] The user is logged into thier account.
+	\item[Precondition:] The user is logged into their account.
 \end{itemize}
 \begin{enumerate}
 	\item The user clicks on the 'View Records' button and a new window opens displaying their records.
@@ -269,14 +271,26 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 	\item[Use Case Number:] 4
 	\item[Use Case Name:] Add Record
 	\item[Description:] The user will be able to add a record to their profile.
-	\item[Precondition:] The user is logged into thier account.
+	\item[Precondition:] The user is logged into their account.
 \end{itemize}	
 \begin{enumerate}
 		\item The user clicks on the 'Add Record' button and a new window opens.
 		\item The user selects their Income, Filing Status, Pretax contributions, posttax contributions, and the year from dropdown menus.
 		\item The user clicks the 'Submit' button and the record is added to their profile.
 		\item[Termination Outcome:] The user has added a record to their profile and it is reflected in the database.
-	\end{enumerate}
+\end{enumerate}
+
+\begin{itemize}
+	\item[Use Case Number:] 5
+	\item[Use Case Name:]Logout
+	\item[Description:] The user will be logged out and the application closed.
+	\item[Precondition:] The user is logged into their account.
+\end{itemize}
+\begin{enumerate}
+	\item The user clicks on the 'Logout' button and the app closes.
+	\item[Termination Outcome:] The user is logged out of their account.
+\end{enumerate}
+
 
 
 
@@ -318,7 +332,7 @@ November 23 - Present Project
 
 \section{Project Structure}
 The UI is structured so that each page uses the same basic format with special buttons or features that have unique abilities.\\\\
-The Backend will likely contain a database with tax bracket data. It also will do all of the calculations to find what taxes a user will pay  and can project what the user's net retirement savings will be in the future. The user's profile contains a list of all the historical tax data for the user in a list. This allows the functions to easily iterate over the list to look up tax bracket data from the database to calculate the taxes and other retirement savings predictions.
+The backend contains a database with tax bracket data. It also will do all of the calculations to find what taxes a user will pay  and can project what the user's net retirement savings will be in the future. The user's profile contains a list of all the historical tax data for the user in a list. This allows the functions to easily iterate over the list to look up tax bracket data from the database to calculate the taxes and other retirement savings predictions.
 \newpage
 \subsection{UML Outline}
 
@@ -342,10 +356,36 @@ The Backend will likely contain a database with tax bracket data. It also will d
 We will likely use the decorator factory pattern to design each page of the UI, since each one needs to be implemented slightly differently.\\
 
 
-
+\newpage
 \section{Results}
-We have a general idea of where we want our project to head towards. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{loginresult}
+	\caption{Login Page}
+	\label{fig:loginresult}
+\end{figure}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Resulthome}
+	\caption{Home Page}
+	\label{fig:resulthome}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{addresult}
+	\caption{Add Record Page}
+	\label{fig:addresult}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{reultview}
+	\caption{View Records Page}
+	\label{fig:reultview}
+\end{figure}
+\newpage
 \subsection{Future Work}
 The next steps are to get an example UI working and have the backend tracer code connected to the database, so we can test if it is functionally accurate.\\\\
 
