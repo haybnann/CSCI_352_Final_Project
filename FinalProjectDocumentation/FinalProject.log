@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.5)  31 OCT 2020 00:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.5)  26 NOV 2020 12:43
 entering extended mode
 **./FinalProject.tex
 (FinalProject.tex
@@ -361,24 +361,24 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 <uihome.png, id=89, 770.37813pt x 432.11438pt>
 File: uihome.png Graphic file (type png)
 <use uihome.png>
-Package pdftex.def Info: uihome.png  used on input line 269.
+Package pdftex.def Info: uihome.png  used on input line 287.
 (pdftex.def)             Requested size: 354.12144pt x 198.62996pt.
 <uihomecreen.png, id=91, 773.89125pt x 429.605pt>
 File: uihomecreen.png Graphic file (type png)
 <use uihomecreen.png>
-Package pdftex.def Info: uihomecreen.png  used on input line 275.
+Package pdftex.def Info: uihomecreen.png  used on input line 293.
 (pdftex.def)             Requested size: 354.12144pt x 196.57841pt.
 <financialplan.png, id=92, 773.89125pt x 434.62375pt>
 File: financialplan.png Graphic file (type png)
 <use financialplan.png>
-Package pdftex.def Info: financialplan.png  used on input line 281.
+Package pdftex.def Info: financialplan.png  used on input line 299.
 (pdftex.def)             Requested size: 354.12144pt x 198.87488pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [3 <./uihome.png> <./uihomecreen.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 302--304
+Underfull \hbox (badness 10000) in paragraph at lines 320--322
 
  []
 
@@ -386,31 +386,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 302--304
 <backend_uml.png, id=107, 936.49875pt x 457.71pt>
 File: backend_uml.png Graphic file (type png)
 <use backend_uml.png>
-Package pdftex.def Info: backend_uml.png  used on input line 309.
+Package pdftex.def Info: backend_uml.png  used on input line 327.
 (pdftex.def)             Requested size: 354.12144pt x 173.07954pt.
 <ui_uml.png, id=108, 651.43375pt x 380.42125pt>
 File: ui_uml.png Graphic file (type png)
 <use ui_uml.png>
-Package pdftex.def Info: ui_uml.png  used on input line 315.
+Package pdftex.def Info: ui_uml.png  used on input line 333.
 (pdftex.def)             Requested size: 354.12144pt x 206.80594pt.
  [5 <./backend_uml.png> <./ui_uml.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 324--325
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--333
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--333
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
 
  []
 
-** WARNING: \IEEEbiography is locked out when in conference mode (line 339).
+** WARNING: \IEEEbiography is locked out when in conference mode (line 357).
 ** WARNING: \IEEEbiographynophoto is locked out when in conference mode (line 3
-44).
+62).
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -422,20 +422,20 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 361.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 379.
 [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 361.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 379.
  (FinalProject.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 361.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 361.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 379.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 379.
 Package rerunfilecheck Info: File `FinalProject.out' has not changed.
 (rerunfilecheck)             Checksum: CA87C4D625CEDD03C9A48B2297B23296;945.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 361.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 379.
  ) 
 Here is how much of TeX's memory you used:
  6331 strings out of 492973
  100841 string characters out of 3128465
- 192284 words of memory out of 3000000
+ 193284 words of memory out of 3000000
  10131 multiletter control sequences out of 15000+200000
  38658 words of font info for 73 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -445,7 +445,7 @@ Here is how much of TeX's memory you used:
 .pfb><C:/Users/A/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a
 .pfb><C:/Users/A/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a
 .pfb>
-Output written on FinalProject.pdf (6 pages, 704626 bytes).
+Output written on FinalProject.pdf (6 pages, 704439 bytes).
 PDF statistics:
  144 PDF objects out of 1000 (max. 8388607)
  38 named destinations out of 1000 (max. 500000)

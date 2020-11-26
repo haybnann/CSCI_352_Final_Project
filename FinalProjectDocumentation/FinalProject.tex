@@ -151,7 +151,7 @@
 
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-This project is an application for those who are planning for their retirement at any point in their career. The goal of the prject is to allow the user's to set retirement saving's goals and track their progress along the way. It can also be used to forcast what your savings will be if you adhere to a certain investment strategy. 
+This project is an application for those who are planning for their retirement at any point in their career. The goal of the project is to allow the user's to set retirement saving's goals and track their progress along the way. It can also be used to forcast what your savings will be if you adhere to a certain investment strategy. 
 \end{abstract}
 
 }
@@ -178,7 +178,7 @@ This application may include large amounts of financial jargon such as marginal 
 This application should impact the financial literacy of its users, since financial education is sorely lacking in most education programs.
 
 \subsection{Challenges}
-We expect some headaches when we start to implement the tax laws and regulations since it will be time consuming to get everything correct and easily changeable.
+I expect some headaches when we start to implement the tax laws and regulations since it will be time consuming to get everything correct and easily changeable.
 
 Current challenges are how we should document all of the tax brackets and we are debating on using a database with each table storing one year's tax bracket data.
 
@@ -191,12 +191,12 @@ The following requirements were generated based on the information needed to mak
 \begin{itemize}
 \item The application will store the user's financial history data.
 \item The user will have a profile that will be able to be accessed on multiple visits
-\item The application will give the user their projecting retirement savings account worth based on a savings plan.
+\item The application will give the user their projected retirement savings account worth.
 \end{itemize}
 
 \subsubsection{Non-Functional}
 \begin{itemize}
-\item The data will be stored securely within the app/database.
+\item The data will be stored securely within the database.
 \item The application will be responsive to all user input and be intuitive to use.
 \item The application will reliably provide the user with accurate data projections.
 \end{itemize}
@@ -208,9 +208,13 @@ The following requirements were generated based on the information needed to mak
 \hline
 Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \hline \hline
-1 & View Profile & User & Low & 1\\
+1 & Sign Up & User & High & 1\\
 \hline
-2 & Salary & User & Low & 1\\
+2 & Login & User & High & 1\\
+\hline
+3 & View Records & User & High & 1\\
+\hline
+4 & Add Record & User & High & 1\\
 \hline
 
 \end{tabular}
@@ -221,47 +225,61 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 
 \begin{itemize}
 	\item[Use Case Number:] 1
-	\item[Use Case Name:] View Profile
-	\item[Description:] The user on our application wishes to view their account and the information contained in there. They will click on the "View Profile" button. Which will then refer them to their profile screen with their information contained in it.
+	\item[Use Case Name:] Sign Up
+	\item[Description:]The user wishes to sign up for an account with this application.
+	\item[Precondition:]The user has this application installed.
 \end{itemize}
 
 \begin{enumerate}
-	\item User wishes to see their account profile, first they would need to log into their account.
-	\item The user then clicks on the View Profile button.
-	\item The user is then directed to the profile page where they can view their information
-	\item[Termination Outcome:] The user now is able to view their profile and view their information.
+	\item The user clicks the Sign Up button.
+	\item The user chooses a username and password.
+	\item The user clicks the submit button and their username and password are added to the database.
+	\item[Termination Outcome:] The user now has an account with this application.
 \end{enumerate} 
 
 
 %item 2
 \begin{itemize}
-	\item[]  
 	\item[Use Case Number:] 2
-	\item[Use Case Name:] Salary
-	\item[Description:] The user in the application's home screen can tap on this button to view their current salary and how much they are earning, along with their paychecks and incoming and outgoing payments.
+	\item[Use Case Name:]Login
+	\item[Description:]The user wishes to login to their account.
+	\item[Precondition:] They have an account with the application.
 \end{itemize}
 
 \begin{enumerate}
-	\item User wishes to see their salary.
-	\item User clicks on the View Salary button.
-	\item The user is directed to the Salary page where they can view their information
-	\item[Termination Outcome:] The user now can view their salary information.
+	\item The user enters their username and password into the textboxes.
+	\item The user clicks the Login button and their information is checked from the database.
+	\item[Termination Outcome:] The user has logged into their account and is at the homepage.
 \end{enumerate} 
 
 %item 3
 \begin{itemize}
-	\item[]
 	\item[Use Case Number:] 3
-	\item[Use Case Name:] Home
-	\item[Description:] The user will be able to go to the home screen to see updates about their information, including salary and transactions.
+	\item[Use Case Name:] View Records
+	\item[Description:] The user will be able to view all of their records held in the application in tabulated form.
+	\item[Precondition:] The user is logged into thier account.
 \end{itemize}
-
 \begin{enumerate}
-	\item The user wishes to view the home page.
-	\item When the user loads up the application, this page is default, but if they are in another tab, they will click on the Home button.
-	\item The user is directed to the Home page of the application.
-	\item[Termination Outcome:] The user can now view the home screen and see their information.
+	\item The user clicks on the 'View Records' button and a new window opens displaying their records.
+	\item[Termination Outcome:] The user can now view their records as a speadsheet.
 \end{enumerate}
+
+%item 3
+\begin{itemize}
+	\item[Use Case Number:] 4
+	\item[Use Case Name:] Add Record
+	\item[Description:] The user will be able to add a record to their profile.
+	\item[Precondition:] The user is logged into thier account.
+\end{itemize}	
+\begin{enumerate}
+		\item The user clicks on the 'Add Record' button and a new window opens.
+		\item The user selects their Income, Filing Status, Pretax contributions, posttax contributions, and the year from dropdown menus.
+		\item The user clicks the 'Submit' button and the record is added to their profile.
+		\item[Termination Outcome:] The user has added a record to their profile and it is reflected in the database.
+	\end{enumerate}
+
+
+
 \newpage
 \subsection{Interface Mockups}
 \begin{figure}[h]

@@ -53,6 +53,8 @@ namespace Ed
         {
             MessageBox.Show("Failed due to" + ex.Message);
         }
+        LoginPage lgp = new LoginPage();
+        lgp.Show();
         c.Close();
         this.Close();//close out the window after updating database
 

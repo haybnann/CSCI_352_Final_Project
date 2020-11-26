@@ -97,8 +97,9 @@ namespace Ed
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
             SignUpWindow suw = new SignUpWindow();
-            suw.Show();
+            suw.Show();this.Close();
         }
     }
 }
